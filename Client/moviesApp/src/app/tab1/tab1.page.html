@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Atores
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Atores</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+    <ion-list>
+      <ion-item *ngFor="let ator of listaAtores">
+        <ion-thumbnail slot="start">
+          <img src={{ator.base64Image}}>
+        </ion-thumbnail>
+        <ion-label>{{ator.name}}</ion-label>
+      </ion-item>
+
+    </ion-list>
+   
+
+</ion-content>

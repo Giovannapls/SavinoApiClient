@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Diretores
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Diretores</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let diretor of listaDiretores">
+      <ion-thumbnail slot="start">
+        <img src={{diretor.base64Image}}>
+      </ion-thumbnail>
+      <ion-label>{{diretor.name}}</ion-label>
+    </ion-item>
+
+  </ion-list>
+ 
+</ion-content>
