@@ -25,6 +25,7 @@ namespace Api_savino_Filmes
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Movies Api", Version = "v1" });
@@ -43,9 +44,14 @@ namespace Api_savino_Filmes
             }
 
             app.UseRouting();
-
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
             app.UseAuthorization();
-
+      
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
