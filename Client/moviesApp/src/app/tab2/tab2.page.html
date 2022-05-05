@@ -6,71 +6,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <div class="main-app-top">
-
-    <div class="top-header">
-      <i class="fa-1 fa fa-bars" aria-hidden="true"></i>
-
-      <i class="fa-2 fa fa-cog" aria-hidden="true"></i>
+<ion-content>
+<ion-list >
+  <ion-item *ngFor="let filme of listaFilmes">
+  <div class="movie_card" id="bright">
+  <div class="info_section">
+    <div class="movie_header">
+      <img class="locandina" src="{{filme.base64Image}}"/>
+      <h1>{{filme.name}}</h1>
+      <h4>{{filme.author}}</h4>
+      <span class="minutes">{{filme.note}}</span>
+      <p class="type">{{filme.genre}}</p>
     </div>
-
-    <ion-list no-lines>
-      <ion-item>
-          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjA1MzIwMjMxNF5BMl5BanBnXkFtZTgwMDQ3NTc2MjI@._V1_UX182_CR0,0,182,268_AL__QL50.jpg">
-          <div class="item-detail-container">
-            <div class="item-container">
-              <h3>Annabelle: Creation</h3>
-              <p>by  David F. Sandberg</p>
-              <p> <strong>1h 49min | Horror, Mystery, Thriller  </strong></p>
-              <span>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-              </span>
-            </div>
-            
-          </div>
-        </ion-item>
-        <ion-item>
-            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjU1ODM1MzYxN15BMl5BanBnXkFtZTgwOTA4NDE2ODE@._V1_UX182_CR0,0,182,268_AL__QL50.jpg">
-            <div class="item-detail-container">
-              <div class="item-container">
-                <h3>X-Men: Apocalypse</h3>
-                <p>by Bryan Singer</p>
-                <p> <strong>2h 24min | Action, Adventure, Sci-Fi </strong></p>
-                <span>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </span>
-              </div>
-              
-            </div>
-          </ion-item>
-          <ion-item>
-              <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg">
-              <div class="item-detail-container">
-                <div class="item-container">
-                  <h3>Avatar</h3>
-                  <p>by James Cameron</p>
-                  <p> <strong>2h 42min | Action, Adventure, Fantasy  </strong></p>
-                  <span>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                  </span>
-                </div>
-                
-              </div>
-            </ion-item>
-    </ion-list>
+    <div class="movie_desc">
+      <p class="text">
+        {{filme.description}}
+      </p>
+    </div>
   </div>
+  <div class="blur_back bright_back"></div>
+</div>
+</ion-item>
 
+</ion-list>
 </ion-content>
