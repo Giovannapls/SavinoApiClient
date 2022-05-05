@@ -1,14 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Filmes
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
+<ion-toolbar  color="primary">
+  <ion-title>Filmes</ion-title>
+  <ion-buttons slot="secondary">
+      <ion-item
+      color="primary"
+      [routerLink]="'/cadastro-page'"
+      routerDirection="forward"
+    > <ion-button fill="outline">
+      <ion-icon slot="start" name="add-circle"></ion-icon>
+      Novo  </ion-button></ion-item>
+   
+  </ion-buttons>
+</ion-toolbar>
 <ion-content>
 <ion-list >
-  <ion-item *ngFor="let filme of listaFilmes">
+  <ion-item *ngFor="let filme of listaFilmes" [routerLink]="'/update-delete-page'"
+  routerDirection="forward" [state]="filme" >
   <div class="movie_card" id="bright">
   <div class="info_section">
     <div class="movie_header">
