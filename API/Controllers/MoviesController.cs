@@ -30,6 +30,7 @@ namespace Api_savino_Filmes.Controllers
             filme.Id)
             .Select(s =>
             {
+                s.Base64Image = filme.Base64Image;
                 s.Name = filme.Name;
                 s.Note = filme.Note;
                 s.Author = filme.Author;
