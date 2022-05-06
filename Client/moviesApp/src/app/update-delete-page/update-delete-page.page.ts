@@ -34,7 +34,7 @@ export class UpdateDeletePagePage implements OnInit {
       description: [this.data.description, [Validators.required]],
       genre: [this.data.genre, [Validators.required]],
       author: [this.data.author, [Validators.required]],
-      note: [this.data.note, [Validators.required, Validators.pattern('^[0-9]+$')]]
+      note: [this.data.note, [Validators.required, Validators.pattern('^[0-9]+[.]*[0-9]*$')]]
     })
     this.fileData = this.data.base64Image
     console.log(this.fileData)
